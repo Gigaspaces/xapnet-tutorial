@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GigaSpaces.Core">
-      <HintPath>..\..\..\GigaSpaces\XAP.NET 9.7.0 x64\NET v4.0.30319\Examples\HelloWorld\Bin\GigaSpaces.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\GigaSpaces\XAP.NET 9.7.0 x64\NET v4.0.30319\Examples\HelloWorld\Bin\GigaSpaces.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -58,10 +58,7 @@
     <Compile Include="event\EventTest.cs" />
     <Compile Include="executor\ExecutorTest.cs" />
     <Compile Include="query\QueryTest.cs" />
-    <Compile Include="remoting\RemotingTest.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="util\AbstractTutorialContextTests.cs" />
     <Compile Include="util\SpaceUtility.cs" />
     <Compile Include="util\UserUtil.cs" />
   </ItemGroup>
@@ -70,6 +67,9 @@
       <Project>{b56a7458-a7fb-41cc-974b-deedacdf3ff9}</Project>
       <Name>xapNetTutorial</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="remoting\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

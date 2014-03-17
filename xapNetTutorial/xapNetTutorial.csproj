@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GigaSpaces.Core">
-      <HintPath>..\..\..\GigaSpaces\XAP.NET 9.7.0 x64\NET v4.0.30319\Examples\HelloWorld\Bin\GigaSpaces.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\GigaSpaces\XAP.NET 9.7.0 x64\NET v4.0.30319\Examples\HelloWorld\Bin\GigaSpaces.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -78,13 +78,8 @@
     <Compile Include="qsg\remoting\server\PaymentProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="qsg\pu\ClientListener.java" />
-    <Content Include="qsg\pu\event\PaymentEventProcessor.java" />
-    <Content Include="qsg\pu\service\IPUService.java" />
-    <Content Include="qsg\pu\service\PUService.java" />
-    <Content Include="qsg\spring\SpringService.java" />
-    <Content Include="qsg\transaction\ITransactionService.java" />
-    <Content Include="qsg\transaction\TransactionService.java" />
+    <Folder Include="qsg\spring\" />
+    <Folder Include="qsg\transaction\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
