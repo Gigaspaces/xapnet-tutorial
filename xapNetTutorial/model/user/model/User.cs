@@ -11,7 +11,7 @@ namespace xaptutorial.model
 	
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? Id { set; get; }
+		public long? Id { set; get; }
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
 		private String Name{ set; get; }
 		private double? Balance{ set; get; }
@@ -43,13 +43,13 @@ namespace xaptutorial.model
 		public User() {
 		}
 			
-		public long? getId() {
-			return Id;
-		}
+//		public long? getId() {
+//			return Id;
+//		}
 
-		public void setId(long? id) {
-			this.Id = id;
-		}
+//		public void setId(long? id) {
+//			this.Id = id;
+//		}
 
 		public void setName(String name) {
 			this.Name = name;

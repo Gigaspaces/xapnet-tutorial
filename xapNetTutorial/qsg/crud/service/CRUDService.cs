@@ -18,7 +18,7 @@ public class CRUDService {
 	public void writeUser(){ 
 
 		User user = new User();
-		user.setId(1);
+		user.Id=1;
 		user.setName("John Smith");
 	//	user.setComment(new String[] {"This", "is","a","comment"});
 		user.setBalance(10.5);
@@ -33,12 +33,12 @@ public class CRUDService {
 		User[] users = new User[2];
 
 		users[0] = new User();
-		users[0].setId( 1 );
+		users[0].Id=1;
 		users[0].setName("John Dow");
 		users[0].setStatus(EAccountStatus.ACTIVE);
 
 		users[1] = new User();
-		users[1].setId( 2);
+		users[1].Id=2;
 		users[1].setName("John Dow");
 		users[1].setStatus(EAccountStatus.ACTIVE);
 
@@ -47,17 +47,16 @@ public class CRUDService {
 
 	public void writeOnlyWithLease() {
 		User user = new User();
-		user.setId( 1);
+		user.Id= 1;
 		user.setName("John Smith");
 		user.setStatus(EAccountStatus.ACTIVE);
 
-        // Roffler change the ordering
 		proxy.Write(user,null,long.MaxValue,0, WriteModifiers.WriteOnly);
 	}
 
 	public void partialUpdate() {
 		User user = new User();
-		user.setId (1);
+		user.Id =1;
 		user.setName("John Dow");
 		user.setStatus(EAccountStatus.ACTIVE);
 		proxy.Write(user);
@@ -69,7 +68,7 @@ public class CRUDService {
 
 	public void ChangeSet() {
 		User user = new User();
-		user.setId(1L);
+		user.Id=1L;
 		user.setName("John Dow");
 		user.setStatus(EAccountStatus.ACTIVE);
 		proxy.Write(user);

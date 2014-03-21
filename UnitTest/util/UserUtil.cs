@@ -19,18 +19,18 @@ public class UserUtil {
 	public void loadUsers() {
 
 		User u = new User();
-		u.setId(1L);
+		u.Id=1L;
 		u.setBalance(120.90);
 		u.setCreditLimit(1500.00);
 		u.setName("John Dow");
 		u.setStatus(EAccountStatus.ACTIVE);
 
 		Address a = new Address();
-		a.setCity("NYC");
-		a.setCountry(ECountry.USA);
-		a.setState("NY");
-		a.setStreet("100th East");
-		a.setZipCode(12345);
+		a.City="NYC";
+		a.Country=ECountry.USA;
+		a.State="NY";
+		a.Street="100th East";
+		a.ZipCode=12345;
 		u.setAddress(a);
 		u.addContact(EContactType.HOME, "770-123-5555");
                                          
@@ -50,18 +50,18 @@ public class UserUtil {
 		proxy.Write(u);
 
 		u = new User();
-		u.setId(2L);
+		u.Id=2L;
 		u.setBalance(120.90);
 		u.setCreditLimit(500.00);
 		u.setName("Customer 2");
 		u.setStatus(EAccountStatus.INACTIVE);
 
 		a = new Address();
-		a.setCity("NYC");
-		a.setCountry(ECountry.USA);
-		a.setState("NY");
-		a.setStreet("100th East");
-		a.setZipCode(10017);
+		a.City="NYC";
+		a.Country=ECountry.USA;
+		a.State="NY";
+		a.Street="100th East";
+		a.ZipCode=10017;
 		u.setAddress(a);
 
 		ratings = new List<int?>();
@@ -72,21 +72,20 @@ public class UserUtil {
 		proxy.Write(u);
 
 		u = new User();
-		u.setId(3L);
+		u.Id=3L;
 		u.setBalance(120.90);
 		u.setCreditLimit(500.00);
 		u.setName("Customer 2");
 		u.setStatus(EAccountStatus.BLOCKED);
 
 		a = new Address();
-		a.setCity("NYC");
-		a.setCountry(ECountry.USA);
-		a.setState("NY");
-		a.setStreet("100th East");
-		a.setZipCode(12345);
+		a.City="NYC";
+		a.Country=ECountry.USA;
+		a.State="NY";
+		a.Street="100th East";
+		a.ZipCode=12345;
 		u.setAddress(a);
 
 		proxy.Write(u);
-
 	}
 }

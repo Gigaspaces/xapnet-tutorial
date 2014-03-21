@@ -47,7 +47,7 @@ public class CrudTest {
 		service.partialUpdate();
 
         User user = new User();
-        user.setId(1L);
+        user.Id=1L;
 
 		User u = proxy.Read(user);
 		Assert.AreEqual(EAccountStatus.BLOCKED, u.getStatus());
@@ -58,7 +58,7 @@ public class CrudTest {
 		service.ChangeSet();
 
         User user = new User();
-        user.setId(1L);
+        user.Id=1L;
 
 		User u = proxy.Read<User>(user);
 		Assert.AreEqual(EAccountStatus.BLOCKED, u.getStatus());
@@ -81,7 +81,7 @@ public class CrudTest {
 		userUtil.loadUsers();
 		User user = service.takeUserById();
 		Assert.IsNotNull(user);
-		Assert.AreEqual(1, user.getId());
+		Assert.AreEqual(1, user.Id);
 	}
 
       [TestMethod]

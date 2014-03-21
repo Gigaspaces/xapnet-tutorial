@@ -42,7 +42,7 @@ public class ExecutorService {
 		MerchantUserTask task = new MerchantUserTask(2);
 
 		Merchant merchant = new Merchant();
-		merchant.setId(2);
+		merchant.Id=2;
 
 		HashSet<long?>  result = proxy.Execute(task,merchant);
 
