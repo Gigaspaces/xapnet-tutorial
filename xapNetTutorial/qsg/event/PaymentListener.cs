@@ -12,7 +12,7 @@ public class PaymentListener {
 	[EventTemplate]
 	Payment unprocessedData() {
 		Payment template = new Payment();
-		template.setStatus(ETransactionStatus.CANCELLED);
+		template.Status=ETransactionStatus.CANCELLED;
 		return template;
 	}
 

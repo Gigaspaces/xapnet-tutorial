@@ -18,12 +18,12 @@ public class CRUDService {
 	public void writeUser(){ 
 
 		User user = new User();
-		user.Id=1;
-		user.setName("John Smith");
+		user.Id=1L;
+		user.Name="John Smith";
 	//	user.setComment(new String[] {"This", "is","a","comment"});
-		user.setBalance(10.5);
-		user.setCreditLimit(1000.00);
-		user.setStatus(EAccountStatus.ACTIVE);
+	//	user.Balance=10.5;
+	//	user.CreditLimit=1000.00;
+	//	user.Status=EAccountStatus.ACTIVE;
 
 		// Write the user to the space
 		proxy.Write(user);
@@ -34,13 +34,13 @@ public class CRUDService {
 
 		users[0] = new User();
 		users[0].Id=1;
-		users[0].setName("John Dow");
-		users[0].setStatus(EAccountStatus.ACTIVE);
+		users[0].Name="John Dow";
+		users[0].Status=EAccountStatus.ACTIVE;
 
 		users[1] = new User();
 		users[1].Id=2;
-		users[1].setName("John Dow");
-		users[1].setStatus(EAccountStatus.ACTIVE);
+		users[1].Name="John Dow";
+		users[1].Status=EAccountStatus.ACTIVE;
 
 		proxy.WriteMultiple(users);
 	}
@@ -48,8 +48,8 @@ public class CRUDService {
 	public void writeOnlyWithLease() {
 		User user = new User();
 		user.Id= 1;
-		user.setName("John Smith");
-		user.setStatus(EAccountStatus.ACTIVE);
+		user.Name="John Smith";
+		user.Status=EAccountStatus.ACTIVE;
 
 		proxy.Write(user,null,long.MaxValue,0, WriteModifiers.WriteOnly);
 	}
@@ -57,26 +57,26 @@ public class CRUDService {
 	public void partialUpdate() {
 		User user = new User();
 		user.Id =1;
-		user.setName("John Dow");
-		user.setStatus(EAccountStatus.ACTIVE);
+		user.Name="John Dow";
+		user.Status=EAccountStatus.ACTIVE;
 		proxy.Write(user);
 
 		// Update the User
-		user.setStatus(EAccountStatus.BLOCKED);
+		user.Status=EAccountStatus.BLOCKED;
 		proxy.Write(user, null, 0, long.MaxValue, WriteModifiers.PartialUpdate);
 	}
 
 	public void ChangeSet() {
 		User user = new User();
 		user.Id=1L;
-		user.setName("John Dow");
-		user.setStatus(EAccountStatus.ACTIVE);
+		user.Name="John Dow";
+		user.Status=EAccountStatus.ACTIVE;
 		proxy.Write(user);
 
 		IdQuery<User> idQuery = new IdQuery<User>(1L);
 		IChangeResult<User> changeResult = 
 			proxy.Change<User>(idQuery,
-        	new ChangeSet().Set("Status", EAccountStatus.BLOCKED));
+        	new ChangeSet().Set("Name", "Testing"));
 
 		if (changeResult.NumberOfChangedEntries == 0) {
 			Console.WriteLine("Entry does not exist");
@@ -125,7 +125,7 @@ public class CRUDService {
 
 	public User takeUserByTemplate() {
 		User template = new User();
-		template.setName("John Dow");
+		template.Name="John Dow";
 
         return  proxy.Take<User>(template);
 	}
@@ -162,9 +162,8 @@ public class CRUDService {
 
 		try{
 			Payment payment = new Payment();
-			payment.setCreatedDate(DateTime.Today);
-			payment.setPaymentId("123");
-			payment.setStatus(ETransactionStatus.PROCESSED);
+			payment.CreatedDate=DateTime.Today;
+			payment.Status=ETransactionStatus.PROCESSED;
 
 			proxy.Write(payment);
 

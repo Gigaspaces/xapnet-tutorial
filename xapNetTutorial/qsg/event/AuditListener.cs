@@ -13,7 +13,7 @@ public class AuditListener {
 	[EventTemplate]
 	Payment unprocessedData() {
 		Payment template = new Payment();
-		template.setStatus(ETransactionStatus.AUDITED);
+		template.Status=ETransactionStatus.AUDITED;
 		return template;
 	}
 

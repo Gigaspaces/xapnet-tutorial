@@ -22,7 +22,7 @@ public class EventTest {
 		// service.registerNotifierListener();
 
 		Payment payment = new Payment();
-		payment.setStatus(ETransactionStatus.CANCELLED);
+		payment.Status=ETransactionStatus.CANCELLED;
 
 		proxy.Write(payment);
 	}
@@ -34,7 +34,7 @@ public class EventTest {
 		// service.registerPollingListener();
 
 		Payment payment = new Payment();
-		payment.setStatus(ETransactionStatus.AUDITED);
+		payment.Status=ETransactionStatus.AUDITED;
 
 		proxy.Write(payment);
 	}

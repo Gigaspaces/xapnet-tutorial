@@ -50,7 +50,7 @@ public class CrudTest {
         user.Id=1L;
 
 		User u = proxy.Read(user);
-		Assert.AreEqual(EAccountStatus.BLOCKED, u.getStatus());
+		Assert.AreEqual(EAccountStatus.BLOCKED, u.Status);
 	}
 
       [TestMethod]
@@ -61,7 +61,7 @@ public class CrudTest {
         user.Id=1L;
 
 		User u = proxy.Read<User>(user);
-		Assert.AreEqual(EAccountStatus.BLOCKED, u.getStatus());
+		Assert.AreEqual(u.Name,"Testing");
 	}
 
       [TestMethod]
@@ -90,7 +90,7 @@ public class CrudTest {
 		userUtil.loadUsers();
 		User user = service.takeUserByTemplate();
 
-		Assert.AreEqual("John Dow", user.getName());
+		Assert.AreEqual("John Dow", user.Name);
 	}
 
       [TestMethod]
@@ -98,7 +98,7 @@ public class CrudTest {
 
 		userUtil.loadUsers();
 		User user = service.takeUserBySQL();
-		Assert.AreEqual(EAccountStatus.BLOCKED, user.getStatus());
+		Assert.AreEqual(EAccountStatus.BLOCKED, user.Status);
 	}
 
       [TestMethod]

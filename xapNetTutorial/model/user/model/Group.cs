@@ -7,24 +7,8 @@ using GigaSpaces.Core.Metadata;
 public class Group   {
 
     [SpaceProperty(StorageType = StorageType.Document)]
-	private long? Id;
+    public long? Id { get; set; }
 
-	private String Name;
-
-	public long? getId() {
-		return Id;
-	}
-
-	public void setId(long? id) {
-		this.Id = id;
-	}
-
-	public String getName() {
-		return Name;
-	}
-
-	public void setName(String name) {
-		this.Name = name;
-	}
+    public String Name { get; set; }
 
 }

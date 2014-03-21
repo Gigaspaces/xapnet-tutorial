@@ -20,10 +20,10 @@ public class UserUtil {
 
 		User u = new User();
 		u.Id=1L;
-		u.setBalance(120.90);
-		u.setCreditLimit(1500.00);
-		u.setName("John Dow");
-		u.setStatus(EAccountStatus.ACTIVE);
+		u.Balance=120.90;
+		u.CreditLimit=1500.00;
+		u.Name="John Dow";
+		u.Status=EAccountStatus.ACTIVE;
 
 		Address a = new Address();
 		a.City="NYC";
@@ -31,30 +31,30 @@ public class UserUtil {
 		a.State="NY";
 		a.Street="100th East";
 		a.ZipCode=12345;
-		u.setAddress(a);
+		u.Address=a;
 		u.addContact(EContactType.HOME, "770-123-5555");
                                          
 		List<int?> ratings = new List<int?>();
 		ratings.Add( 1);
 		ratings.Add( 4);
-		u.setRatings(ratings);
+		u.Ratings=ratings;
 
 		List<Group> groups = new List<Group>();
 		Group g = new Group();
-		g.setId(1L);
-		g.setName("Group 1");
+		g.Id =1L;
+		g.Name="Group 1";
 		groups.Add(g);
-		u.setGroups(groups);
+		u.Groups=groups;
 
-		u.setComment(new String[] { "existing", "customer" });
+	//	u.setComment(new String[] { "existing", "customer" });
 		proxy.Write(u);
 
 		u = new User();
 		u.Id=2L;
-		u.setBalance(120.90);
-		u.setCreditLimit(500.00);
-		u.setName("Customer 2");
-		u.setStatus(EAccountStatus.INACTIVE);
+		u.Balance=120.90;
+		u.CreditLimit=500.00;
+		u.Name="Customer 2";
+		u.Status=EAccountStatus.INACTIVE;
 
 		a = new Address();
 		a.City="NYC";
@@ -62,21 +62,21 @@ public class UserUtil {
 		a.State="NY";
 		a.Street="100th East";
 		a.ZipCode=10017;
-		u.setAddress(a);
+		u.Address=a;
 
 		ratings = new List<int?>();
 		ratings.Add(1);
 		ratings.Add( 3);
-		u.setRatings(ratings);
+		u.Ratings=ratings;
 
 		proxy.Write(u);
 
 		u = new User();
 		u.Id=3L;
-		u.setBalance(120.90);
-		u.setCreditLimit(500.00);
-		u.setName("Customer 2");
-		u.setStatus(EAccountStatus.BLOCKED);
+		u.Balance=120.90;
+		u.CreditLimit=500.00;
+		u.Name="Customer 2";
+		u.Status=EAccountStatus.BLOCKED;
 
 		a = new Address();
 		a.City="NYC";
@@ -84,7 +84,7 @@ public class UserUtil {
 		a.State="NY";
 		a.Street="100th East";
 		a.ZipCode=12345;
-		u.setAddress(a);
+		u.Address=a;
 
 		proxy.Write(u);
 	}

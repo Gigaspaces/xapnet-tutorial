@@ -31,13 +31,13 @@ public class QueryService {
 
 	public User findUserByTemplate() {
 		User user = new User();
-		user.setName("John Dow");
+		user.Name="John Dow";
 		return proxy.Read<User>(user);
 	}
 
 	public User[] findUsersByTemplate() {
 		User user = new User();
-		user.setStatus(EAccountStatus.ACTIVE);
+		user.Status=EAccountStatus.ACTIVE;
 		return proxy.ReadMultiple<User>(user);
 	}
 

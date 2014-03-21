@@ -26,7 +26,7 @@ public class MerchantUserTask : ISpaceTask<HashSet<long?>> {
 		// Eliminate duplicate UserId
 		if (payments != null) {
 			for (int i = 0; i < payments.Length; i++) {
-				userIds.Add(payments[i].getUserId());
+				userIds.Add(payments[i].UserId);
 			}
 		}
 		return userIds;
